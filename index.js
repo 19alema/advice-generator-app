@@ -14,19 +14,22 @@ function apiData(advice) {
     let advices = Object.values(advice.slip);
      advice_numb.innerText = "Advice " + "#" + advices[0];
      advice_para.innerText = advices[1]
-    console.log(advices)
     
 }
 
-window.addEventListener("DOMContentLoaded", apiData)
+window.addEventListener("DOMContentLoaded", apiData);
+
+// Play music on app load
+const audio = document.querySelector("audio")
+
 
 const diceBtn = document.querySelector(".dice-svg");
 
 diceBtn.addEventListener("click", handleClick)
 
-const audio = document.querySelector("audio")
+
 function handleClick() {
-    audio.play()
+      audio.play()
     fetch(url)
         .then(response => response.json())
         .then(data => apiData(data));
