@@ -19,8 +19,7 @@ function apiData(advice) {
 
 window.addEventListener("DOMContentLoaded", apiData);
 
-// Play music on app load
-const audio = document.querySelector("audio")
+
 
 
 const diceBtn = document.querySelector(".dice-svg");
@@ -29,7 +28,7 @@ diceBtn.addEventListener("click", handleClick)
 
 
 function handleClick() {
-      audio.play()
+      
     fetch(url)
         .then(response => response.json())
         .then(data => apiData(data));
